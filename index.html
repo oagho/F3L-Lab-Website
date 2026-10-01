@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F3L Laboratory | University of Toledo</title>
+    <!-- Proper Path linking to your nested double-s stylesheet -->
+     <link rel="shortcut icon" href="images/f3l.png" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Connected Navigation Header -->
+    <!-- Connected Navigation Header (Research Removed) -->
+<header>
+    <div class="nav-container">
+        <div class="logo-image-container">
+            <a href="index.html">
+                <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- Dropdown Menu Item -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">People ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="members.html">Lab Members</a></li>
+                        <li><a href="alumni.html">Alumni</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Project ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Active projects.html">Active Projects</a></li>
+                        <li><a href="Closed projects.html">Closed Projects</a></li>
+                    </ul>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Welcome Hero Section -->
+    <section class="hero-slideshow" id="heroSlideshow">
+    <div class="hero-slide active" style="background-image: url('images/hero-1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/hero-2.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/hero-3.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/hero-4.jpg');"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1><span>F3L</span></h1>
+        <h1 class="bentham-regular">Fatigue , Fracture, and Failure Laboratory </h1>
+        <p id="heroCaption">Advancing structural integrity, materials science engineering, and high-throughput mechanical characterization at the University of Toledo.</p>
+        <a href="publications.html" class="btn">Explore Our Research</a>
+    </div>
+</section>
+
+    <!-- Main Grid Content -->
+    <main>
+        <!-- Lab Mission & Overview -->
+        <div class="grid-2col">
+            <section>
+                <h2>Welcome to F3L</h2>
+                <p>Directed by Dr. Meysam Haghshenas, the Fatigue , Fracture, and Failure Laboratory (F3L) at the University of Toledo specializes in evaluation and mechanical characterization of advanced structural materials. Our lab researches lightweight alloys, high-throughput fatigue life behavior, additive manufacturing properties, and material integrity across severe environments.</p>
+            
+            </section>
+
+            
+        </div>
+
+        <!-- Sidebar / News & Highlights -->
+        <div class="right-column">
+    <section>
+        <h2>Lab Updates</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <div class="news-date">July 2026</div>
+                <p>F3L's research is supported through university, federal, and external research partnerships.</p>
+            </div>
+            <div class="news-item">
+                <div class="news-date">09/18/2026</div>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7507797278364110850?collapsed=1" height="627" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+            <div class="news-item">
+                <div class="news-date">upcoming</div>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7508543935913279489?collapsed=1" height="456" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+        </div>
+    </section>
+</div>
+    </main>
+
+     <!-- Connected Unified Footer -->
+    <footer>
+        <div class="footer-credits">
+            <p>&copy; 2026 Failure, Fracture, and Fatigue Laboratory | University of Toledo</p>
+            <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 0.5rem;">Department of Mechanical, Industrial and Manufacturing Engineering</p>
+        </div>
+
+    </footer>
+    <script>
+        const heroCaptions = [
+            "Advancing structural integrity, materials science engineering, and high-throughput mechanical characterization at the University of Toledo.",
+            "Pushing fatigue testing beyond 10 million cycles with our high-temperature ultrasonic fatigue tester.",
+            "Partnering with the Air Force and NASA to test the alloys of tomorrow's aerospace structures.",
+            "Training the next generation of materials engineers through hands-on graduate research."
+        ];
+
+        let heroIndex = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroCaptionEl = document.getElementById('heroCaption');
+
+        function showHeroSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroSlides[index].classList.add('active');
+
+            heroCaptionEl.style.opacity = 0;
+            setTimeout(() => {
+                heroCaptionEl.textContent = heroCaptions[index];
+                heroCaptionEl.style.opacity = 1;
+            }, 400);
+        }
+
+        setInterval(() => {
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            showHeroSlide(heroIndex);
+        }, 5000);
+    </script>
+</body>
+</html>

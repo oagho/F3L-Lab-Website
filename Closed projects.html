@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closed Projects | F3L Lab | University of Toledo</title>
+    <!-- Proper Path linking to your nested double-s stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/f3l.png" />
+    
+</head>
+<body>
+
+    <!-- Connected Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-image-container">
+                <a href="index.html">
+                    <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">People ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.html">Lab Members</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Project ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Active projects.html">Active Projects</a></li>
+                            <li><a href="Closed projects.html" class="active">Closed Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Banner -->
+    <div class="page-banner">
+        <h1>Closed & Completed Projects</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Research Archive</h2>
+            <p>Historical research initiatives, grant deliverables, and completed contract studies conducted by the Fatigue, Fracture, and Failure Laboratory, cataloged by supporting agency.</p>
+
+            <div class="archive-summary-grid" id="archive-stats"></div>
+
+            <div class="archive-container">
+                <aside class="archive-sidebar">
+                    <h3 class="section-title-sm" style="margin-top: 0; font-size: 1.1rem; border-left-color: var(--ut-navy);">Sponsors</h3>
+                    <nav id="sponsor-buttons" aria-label="Sponsors"></nav>
+                </aside>
+
+                <div class="archive-content-panel">
+                    <div id="sponsor-detail" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Connected Unified Footer -->
+    <footer>
+        <div class="footer-credits">
+            <p>&copy; 2026 Failure, Fracture, and Fatigue Laboratory | University of Toledo</p>
+            <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 0.5rem;">Department of Mechanical, Industrial and Manufacturing Engineering</p>
+        </div>
+    </footer>
+
+    <script>
+        const closedProjectsData = [
+            {
+                sponsor: 'NASA',
+                description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
+                projects: [
+                    {
+                        title: 'Cryogenic High-Cycle Fatigue of Additive GRCop-84',
+                        period: '2021 – 2023',
+                        material: 'GRCop-84 Alloy',
+                        pi: 'F3L Research Group',
+                        summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
+                    },
+                    {
+                        title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
+                        period: '2019 – 2022',
+                        material: 'Inconel 625 / 718',
+                        pi: 'F3L Research Group',
+                        summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
+                    }
+                ]
+            },
+            {
+                sponsor: 'Department of War',
+                description: 'Armored ground systems, heavy projectile structural integrity, and defensive material durability.',
+                projects: [
+                    {
+                        title: 'High-Strain Dynamic Fracture Mechanics of Heavy Armor Plate',
+                        period: '2020 – 2022',
+                        material: 'Rolled Homogeneous Armor (RHA) Steel',
+                        pi: 'F3L Research Group',
+                        summary: 'Quantified critical crack propagation velocities and fracture toughness values under high-rate dynamic shock loading configurations.'
+                    },
+                    {
+                        title: 'Ballistic Impact Damage Tolerancing on Light Fastener Arrays',
+                        period: '2018 – 2021',
+                        material: 'High-Strength Fastener Steels',
+                        pi: 'F3L Research Group',
+                        summary: 'Analyzed post-impact residual fatigue capacity in critical joint assemblies subject to shear stress and shockwaves.'
+                    }
+                ]
+            },
+            {
+                sponsor: 'Air Force',
+                description: 'Aviation airframe structural life extension, turbine engine alloys, and ultrasonic testing regimens.',
+                projects: [
+                    {
+                        title: 'Ultrasonic VHCF Life Prediction in Ti-6Al-4V Compressor Blades',
+                        period: '2022 – 2024',
+                        material: 'Ti-6Al-4V (Forged & Additive)',
+                        pi: 'F3L Research Group',
+                        summary: 'Identified subsurface gigacycle fatigue crack initiation mechanisms occurring beyond 10^7 cycles in engine rotating assemblies.'
+                    },
+                    {
+                        title: 'Fretting Fatigue Mitigation in Aircraft Lap Joints',
+                        period: '2019 – 2021',
+                        material: 'Al 7075-T6 / Al 2024-T3',
+                        pi: 'F3L Research Group',
+                        summary: 'Studied mechanical interface degradation, micro-slip contact damage, and surface coating barriers in aging military transport aircraft.'
+                    }
+                ]
+            }
+        ];
+
+        const totalProjectsCount = closedProjectsData.reduce((acc, curr) => acc + curr.projects.length, 0);
+
+        document.getElementById('archive-stats').innerHTML = [
+            ['Sponsors', closedProjectsData.length, 'agencies'],
+            ['Closed Projects', totalProjectsCount, 'archived'],
+            ['Testing Regimes', 'VHCF / HCF', 'methods'],
+            ['Status', '100%', 'delivered']
+        ].map(([label, val, unit]) => `
+            <div class="archive-summary-card">
+                <div class="archive-summary-label">${label}</div>
+                <div class="archive-summary-val">
+                    <strong>${val}</strong>
+                    <span>${unit}</span>
+                </div>
+            </div>
+        `).join('');
+
+        const sponsorContainer = document.getElementById('sponsor-buttons');
+        sponsorContainer.innerHTML = closedProjectsData.map((item, index) => `
+            <button class="archive-sponsor-btn" data-sponsor="${index}" aria-pressed="false">
+                <span>${item.sponsor}</span>
+                <small>${item.projects.length}</small>
+            </button>
+        `).join('');
+
+        function displaySponsorProjects(index) {
+            const data = closedProjectsData[index];
+            if (!data) return;
+
+            document.querySelectorAll('[data-sponsor]').forEach(btn => {
+                btn.setAttribute('aria-pressed', Number(btn.dataset.sponsor) === index);
+            });
+
+            document.getElementById('sponsor-detail').innerHTML = `
+                <div class="archive-header">
+                    <h3>${data.sponsor}</h3>
+                    <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #666;">${data.description}</p>
+                </div>
+                <div class="archive-list">
+                    ${data.projects.map(proj => `
+                        <div class="archive-card">
+                            <div class="archive-card-top">
+                                <h4 class="archive-card-title">${proj.title}</h4>
+                                <span class="archive-year-badge">${proj.period}</span>
+                            </div>
+                            <div class="archive-meta">
+                                <span><strong>Material:</strong> ${proj.material}</span>
+                                <span><strong>Lead:</strong> ${proj.pi}</span>
+                            </div>
+                            <p class="archive-desc">${proj.summary}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        sponsorContainer.addEventListener('click', e => {
+            const btn = e.target.closest('[data-sponsor]');
+            if (btn) displaySponsorProjects(Number(btn.dataset.sponsor));
+        });
+
+        displaySponsorProjects(0);
+    </script>
+</body>
+</html>

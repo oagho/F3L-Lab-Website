@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Projects | F3L Lab | University of Toledo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/f3l.png" />
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <!-- Connected Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-image-container">
+                <a href="index.html">
+                    <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">People ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.html">Lab Members</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Project ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Active projects.html" class="active">Active Projects</a></li>
+                            <li><a href="Closed projects.html">Closed Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Banner -->
+    <div class="page-banner">
+        <h1>Active Projects</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Testing Tracker Section -->
+        <section>
+            <h2>Testing Progress Dashboard</h2>
+            <p>Select a material system from the directory below to view branch-level fatigue test metrics, thermal parameters, and batch status.</p>
+
+            <div class="dashboard-stats-grid" id="stats"></div>
+
+            <div class="dashboard-container">
+                <aside class="dashboard-sidebar-panel">
+                    <div class="dashboard-group-label" style="margin-bottom: 0.75rem;">Project Directory</div>
+                    <nav id="projects" aria-label="Projects"></nav>
+                </aside>
+
+                <div class="dashboard-detail-box">
+                    <div id="detail" aria-live="polite"></div>
+
+                    <div class="dashboard-legend-bar" aria-label="Status legend">
+                        <span class="dashboard-legend-item"><i class="legend-dot done"></i>Done</span>
+                        <span class="dashboard-legend-item"><i class="legend-dot progress"></i>In progress</span>
+                        <span class="dashboard-legend-item"><i class="legend-dot ready"></i>Ready for test</span>
+                        <span class="dashboard-legend-item"><i class="legend-dot machine"></i>Need to machine</span>
+                        <span class="dashboard-legend-item"><i class="legend-dot waiting"></i>Waiting for material</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Connected Unified Footer -->
+    <footer>
+        <div class="footer-credits">
+            <p>&copy; 2026 Failure, Fracture, and Fatigue Laboratory | University of Toledo</p>
+            <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 0.5rem;">Department of Mechanical, Industrial and Manufacturing Engineering</p>
+        </div>
+    </footer>
+
+    <script>
+        const row = (condition, temperature, test, status, note = '—') => ({ condition, temperature, test, status, note });
+        const projects = [
+            {
+                name: 'GRX-810',
+                group: 'NASA Projects',
+                rows: [
+                    row('Non-HIPed', 'Room temperature', 'VHCF', 'Done'),
+                    row('Non-HIPed', 'High temperature', 'VHCF', 'Need to machine'),
+                    row('HIPed', 'Room temperature', 'VHCF', 'Need to machine'),
+                    row('HIPed', 'High temperature', 'VHCF', 'Need to machine'),
+                    row('HIPed-Defective', 'Room temperature', 'VHCF', 'Need to machine'),
+                    row('HIPed-Defective', 'High temperature', 'VHCF', 'Need to machine')
+                ],
+                counts: ['Non-HIPed: 29 remaining', 'HIPed: 62 samples', 'HIPed-Defective: 44 samples'],
+                note: 'Sample counts apply to material conditions, not individual test branches. The high-temperature value is not specified.'
+            },
+            {
+                name: 'GRCop-42',
+                group: 'NASA Projects',
+                rows: [
+                    row('As-Printed', 'Room temperature', 'HCF-Defective', 'In progress', '6 remaining'),
+                    row('As-Printed', 'Room temperature', 'HCF-Non-Defective', 'Waiting for material'),
+                    row('As-Printed', 'Room temperature', 'VHCF – Batch 1', 'Done', '20 remaining'),
+                    row('As-Printed', 'Room temperature', 'VHCF – Pristine', 'Waiting for material'),
+                    row('Machined', 'Room temperature', 'HCF', 'Ready for test'),
+                    row('Machined', 'Room temperature', 'VHCF', 'In progress', '21 remaining'),
+                    row('Machined', 'High temperature', '400 °C', 'Ready for test'),
+                    row('Machined', 'High temperature', '600 °C', 'Ready for test')
+                ],
+                note: 'VHCF – Batch 1 is marked “Done!” with a separate “20 Remaining” note. The high-temperature branches specify temperatures but do not name a test method.'
+            },
+            {
+                name: 'Inconel 718',
+                group: 'NASA Projects',
+                rows: ['HT-1', 'HT-2', 'HT-3'].flatMap(c => ['HCF', 'VHCF'].map(t => row(c, 'Room temperature', t, 'Waiting for material')))
+            },
+            {
+                name: 'Ti-6Al-4V',
+                group: 'NASA Projects',
+                rows: ['SR', 'SRV'].flatMap(c => ['HCF-HIPed', 'HCF-Non-HIPed', 'VHCF'].map(t => row(c, 'Room temperature', t, 'Waiting for material')))
+            },
+            {
+                name: 'ORC',
+                group: 'NASA Projects',
+                rows: ['HIPed', 'Non-HIPed'].flatMap(c => ['HCF', 'VHCF'].map(t => row(c, 'Room temperature', t, 'Waiting for material')))
+            },
+            {
+                name: 'A205',
+                group: 'Other Projects',
+                rows: [row('Not specified', 'High temperature', 'VHCF', 'Need to machine')],
+                note: 'High-temperature VHCF testing. Material condition, temperature value, and sample count are not provided.'
+            },
+            {
+                name: 'Al-7050-RAM2',
+                group: 'Other Projects',
+                rows: ['HT', 'HIP+HT', '(HIP-Solutionized)+Aged'].map(c => row(c, 'Not specified', 'VHCF', 'Waiting for material')),
+                note: 'Test temperature and sample counts are not provided.'
+            }
+        ];
+
+        const classes = {
+            'Done': 'done',
+            'In progress': 'progress',
+            'Ready for test': 'ready',
+            'Need to machine': 'machine',
+            'Waiting for material': 'waiting'
+        };
+
+        const all = projects.flatMap(p => p.rows);
+
+        document.getElementById('stats').innerHTML = [
+            ['Projects', projects.length, 'total groups'],
+            ['Test branches', all.length, 'defined'],
+            ['Completed', all.filter(r => r.status === 'Done').length, 'branches'],
+            ['Awaiting material', all.filter(r => r.status === 'Waiting for material').length, 'branches']
+        ].map(([label, value, unit]) => `
+            <div class="dashboard-stat-card">
+                <div class="dashboard-stat-card-label">${label}</div>
+                <div class="dashboard-stat-card-value">
+                    <strong>${value}</strong>
+                    <span>${unit}</span>
+                </div>
+            </div>
+        `).join('');
+
+        document.getElementById('projects').innerHTML = [...new Set(projects.map(p => p.group))].map(g => `
+            <div class="dashboard-nav-group">
+                <div class="dashboard-group-label">${g}</div>
+                ${projects.map((p, i) => p.group === g ? `
+                    <button class="dashboard-project-button" data-project="${i}" aria-pressed="false">
+                        <span>${p.name}</span>
+                        <small>${p.rows.length}</small>
+                    </button>
+                ` : '').join('')}
+            </div>
+        `).join('');
+
+        function selectProject(index) {
+            const p = projects[index];
+            if (!p) return;
+
+            document.querySelectorAll('[data-project]').forEach(b => {
+                b.setAttribute('aria-pressed', Number(b.dataset.project) === index);
+            });
+
+            const done = p.rows.filter(r => r.status === 'Done').length;
+            const conditions = [...new Set(p.rows.map(r => r.condition))];
+
+            document.getElementById('detail').innerHTML = `
+                <div class="dashboard-detail-header">
+                    <div>
+                        <div class="dashboard-group-tag">${p.group}</div>
+                        <h3>${p.name}</h3>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666;">
+                            ${p.rows.length} test ${p.rows.length === 1 ? 'branch' : 'branches'} · 
+                            ${conditions.length} material ${conditions.length === 1 ? 'condition' : 'conditions'}
+                            ${conditions[0] === 'Not specified' ? ' (unspecified)' : ''}
+                        </p>
+                    </div>
+                    <div class="dashboard-completion-box">
+                        <strong>${done}</strong> / ${p.rows.length} completed
+                        <div class="dashboard-progress-track" role="img" aria-label="${done} of ${p.rows.length} branches completed">
+                            <span class="dashboard-progress-bar" style="--progress-width: ${(done / p.rows.length) * 100}%"></span>
+                        </div>
+                    </div>
+                </div>
+
+                ${p.counts ? `
+                    <div class="dashboard-condition-chips">
+                        ${p.counts.map(c => `
+                            <span class="dashboard-condition-chip">${c.split(':')[0]}: <b>${c.split(':')[1]}</b></span>
+                        `).join('')}
+                    </div>
+                ` : ''}
+
+                <div class="dashboard-table-container" tabindex="0" role="region" aria-label="${p.name} testing details">
+                    <table class="dashboard-data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Material condition</th>
+                                <th scope="col">Temperature</th>
+                                <th scope="col">Test / branch</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Sample note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${p.rows.map(r => `
+                                <tr>
+                                    <td>${r.condition}</td>
+                                    <td>${r.temperature}</td>
+                                    <td>${r.test}</td>
+                                    <td><span class="status-badge ${classes[r.status]}">${r.status}</span></td>
+                                    <td>${r.note}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="dashboard-notes-callout">
+                    ${p.note || 'Sample counts are not provided.'}
+                </div>
+            `;
+        }
+
+        document.getElementById('projects').addEventListener('click', e => {
+            const b = e.target.closest('[data-project]');
+            if (b) selectProject(Number(b.dataset.project));
+        });
+
+        selectProject(0);
+    </script>
+</body>
+</html>
