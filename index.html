@@ -51,11 +51,11 @@
 
 
     <!-- Welcome Hero Section -->
-    <section class="hero-slideshow" id="heroSlideshow">
-    <div class="hero-slide active" style="background-image: url('images/hero-1.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hero-2.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hero-3.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hero-4.jpg');"></div>
+     <section class="hero-slideshow" id="heroSlideshow">
+         <video class="hero-video" autoplay muted loop playsinline>
+        <source src="images/lab video.mp4" type="video/mp4">
+    </video>
+   
 
     <div class="hero-overlay"></div>
 
@@ -64,9 +64,9 @@
         <h1 class="bentham-regular">Fatigue , Fracture, and Failure Laboratory </h1>
         <p id="heroCaption">Advancing structural integrity, materials science engineering, and high-throughput mechanical characterization at the University of Toledo.</p>
         <a href="publications.html" class="btn">Explore Our Research</a>
+        
     </div>
 </section>
-
     <!-- Main Grid Content -->
     <main>
         <!-- Lab Mission & Overview -->
@@ -111,32 +111,29 @@
 
     </footer>
     <script>
-        const heroCaptions = [
-            "Advancing structural integrity, materials science engineering, and high-throughput mechanical characterization at the University of Toledo.",
-            "Pushing fatigue testing beyond 10 million cycles with our high-temperature ultrasonic fatigue tester.",
-            "Partnering with the Air Force and NASA to test the alloys of tomorrow's aerospace structures.",
-            "Training the next generation of materials engineers through hands-on graduate research."
-        ];
+    const heroCaptions = [
+        "Advancing structural integrity, materials science engineering, and high-throughput mechanical characterization at the University of Toledo.",
+        "Pushing fatigue testing beyond 10 million cycles with our high-temperature ultrasonic fatigue tester.",
+        "Partnering with the Air Force and NASA to test the alloys of tomorrow's aerospace structures.",
+        "Training the next generation of materials engineers through hands-on graduate research."
+    ];
 
-        let heroIndex = 0;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroCaptionEl = document.getElementById('heroCaption');
+    let heroIndex = 0;
+    const heroCaptionEl = document.getElementById('heroCaption');
 
-        function showHeroSlide(index) {
-            heroSlides.forEach(slide => slide.classList.remove('active'));
-            heroSlides[index].classList.add('active');
-
-            heroCaptionEl.style.opacity = 0;
-            setTimeout(() => {
-                heroCaptionEl.textContent = heroCaptions[index];
-                heroCaptionEl.style.opacity = 1;
-            }, 400);
-        }
-
-        setInterval(() => {
-            heroIndex = (heroIndex + 1) % heroSlides.length;
-            showHeroSlide(heroIndex);
-        }, 5000);
-    </script>
+    setInterval(() => {
+        heroIndex = (heroIndex + 1) % heroCaptions.length;
+        
+        // Fade out
+        heroCaptionEl.style.opacity = 0;
+        
+        // Swap text and fade back in
+        setTimeout(() => {
+            heroCaptionEl.textContent = heroCaptions[heroIndex];
+            heroCaptionEl.style.opacity = 1;
+        }, 400);
+    }, 5000);
+</script>
+      
 </body>
 </html>
