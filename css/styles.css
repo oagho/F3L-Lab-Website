@@ -366,7 +366,7 @@ p {
     border: 0;
 }
 
-/* Methodology & Project Cards (About/Research pages) */
+/* Methodology & dject Cards (About/Research pages) */
 .grid-capabilities {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -392,6 +392,9 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 1.5rem;
+}
+.pr2 {
+    text-align: left;
 }
 
 .profile-card {
