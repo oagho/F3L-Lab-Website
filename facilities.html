@@ -50,21 +50,19 @@
 </header>
 
 
+    
     <!-- Welcome Hero Section -->
-    <section class="hero-slideshow" id="heroSlideshow">
-         <video class="hero-video" autoplay muted loop playsinline>
+<section class="hero-slideshow" id="heroSlideshow">
+    <video class="hero-video" id="heroVideo" autoplay muted playsinline>
         <source src="images/lab video.mp4" type="video/mp4">
     </video>
-   
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <h1><span>facilities</span></h1>
-        
+        <h1><span>Facilities</span></h1>
     </div>
 </section>
-
     <!-- Main Grid Content -->
     <main>
         <!-- Lab Mission & Overview -->
@@ -198,32 +196,22 @@
         }
     </style>
     <script>
-        const heroCaptions = [
-            "Advancing structural integrity, materials science engineering, and high-throughput mechanical characterization at the University of Toledo.",
-            "Pushing fatigue testing beyond 10 million cycles with our high-temperature ultrasonic fatigue tester.",
-            "Partnering with the Air Force and NASA to test the alloys of tomorrow's aerospace structures.",
-            "Training the next generation of materials engineers through hands-on graduate research."
+        const heroVideo = document.getElementById('heroVideo');
+        const videoPlaylist = [
+            "images/lab video.mp4",
+            "images/frozen3r.mp4"
         ];
+        let currentVideoIndex = 0;
 
-        let heroIndex = 0;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroCaptionEl = document.getElementById('heroCaption');
-
-        function showHeroSlide(index) {
-            heroSlides.forEach(slide => slide.classList.remove('active'));
-            heroSlides[index].classList.add('active');
-
-            heroCaptionEl.style.opacity = 0;
-            setTimeout(() => {
-                heroCaptionEl.textContent = heroCaptions[index];
-                heroCaptionEl.style.opacity = 1;
-            }, 400);
+        if (heroVideo) {
+        heroVideo.addEventListener('ended', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length;
+            heroVideo.src = videoPlaylist[currentVideoIndex];
+            heroVideo.load();
+            heroVideo.play().catch(err => console.error("Playback error:", err));
+            });
         }
-
-        setInterval(() => {
-            heroIndex = (heroIndex + 1) % heroSlides.length;
-            showHeroSlide(heroIndex);
-        }, 5000);
+       
     </script>
 </body>
 </html>
