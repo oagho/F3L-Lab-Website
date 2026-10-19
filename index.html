@@ -82,24 +82,32 @@
 
         <!-- Sidebar / News & Highlights -->
         <div class="right-column">
-    <section>
-        <h2>Lab Updates</h2>
-        <div class="news-grid">
-            <div class="news-item">
-                <div class="news-date">July 2026</div>
-                <p>F3L's research is supported through university, federal, and external research partnerships.</p>
-            </div>
-            <div class="news-item">
-                <div class="news-date">09/18/2026</div>
-                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7507797278364110850?collapsed=1" height="627" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-            </div>
-            <div class="news-item">
-                <div class="news-date">upcoming</div>
-                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7508543935913279489?collapsed=1" height="456" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-            </div>
+            <section class="slideshow-container">
+                <h2>Lab Updates</h2>
+                <!-- Slide 1 -->
+                <a class="mySlides" href="https://www.linkedin.com/feed/update/urn:li:activity:7508543937066786817/" target="_blank" rel="noopener noreferrer">
+                 <img src="images/CAM26.jpg" alt="Lab update slide 1">
+                </a>
+
+            <!-- Slide 2 -->
+                <a class="mySlides" href="https://www.linkedin.com/feed/update/urn:li:activity:7515967793033302016/" target="_blank" rel="noopener noreferrer">
+                <img src="images/RammanMs&T26.jpg" alt="Lab update slide 2">
+                </a>
+
+            <!-- Slide 3 -->
+                <a class="mySlides" href="https://www.linkedin.com/feed/update/urn:li:activity:7516956609151979520/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/TasniaMS&T26.jpg" alt="Lab update slide 3">
+                </a>
+
+            <!-- Slide 4 -->
+                <a class="mySlides" href="https://www.linkedin.com/in/mohammadbagher-mahtabi-6b365b40/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/MohammadBleadershipAward.jpg" alt="Lab update slide 4">
+                </a>
+
+                <button type="button" class="slide-btn left" onclick="plusDivs(-1)">&#10094;</button>
+                <button type="button" class="slide-btn right" onclick="plusDivs(1)">&#10095;</button>
+            </section>
         </div>
-    </section>
-</div>
     </main>
 
      <!-- Connected Unified Footer -->
@@ -133,6 +141,27 @@
             heroCaptionEl.style.opacity = 1;
         }, 400);
     }, 5000);
+
+    // 2. Lab Updates Slideshow Functionality
+        let slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            const slides = document.getElementsByClassName("mySlides");
+            if (slides.length === 0) return;
+
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
 </script>
       
 </body>
