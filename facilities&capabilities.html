@@ -3,212 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F3L Laboratory | University of Toledo</title>
-    <!-- Proper Path linking to your nested double-s stylesheet -->
-     <link rel="shortcut icon" href="images/f3l.png" />
+    <title>Facilities &amp; Capabilities | F3L - University of Toledo</title>
+    <link rel="shortcut icon" href="images/f3l.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Connected Navigation Header -->
-    <!-- Connected Navigation Header (Research Removed) -->
-<header>
-    <div class="nav-container">
-        <div class="logo-image-container">
-            <a href="index.html">
-                <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
-            </a>
+    <header>
+        <div class="nav-container">
+            <div class="logo-image-container">
+                <a href="index.html">
+                    <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">People ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.html">Lab Members</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projects ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="active-projects.html">Active Projects</a></li>
+                            <li><a href="closed-projects.html">Closed Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="facilities&capabilities.html" class="active">Facilities & Capabilities</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <!-- Dropdown Menu Item -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">People ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="members.html">Lab Members</a></li>
-                        <li><a href="alumni.html">Alumni</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Project ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Active projects.html">Active Projects</a></li>
-                        <li><a href="Closed projects.html">Closed Projects</a></li>
-                    </ul>
-                </li>
-                <li><a href="facilities&capabilities.html">Facilities</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
+    <section class="hero-slideshow" id="heroSlideshow">
+        <video class="hero-video" id="heroVideo" autoplay muted playsinline>
+            <source src="images/lab video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1><span>Testing Facilities</span></h1>
+        </div>
+    </section>
 
-    
-    <!-- Welcome Hero Section -->
-<section class="hero-slideshow" id="heroSlideshow">
-    <video class="hero-video" id="heroVideo" autoplay muted playsinline>
-        <source src="images/lab video.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <h1><span>Facilities</span></h1>
-    </div>
-</section>
-    <!-- Main Grid Content -->
     <main>
-        <!-- Lab Mission & Overview -->
-        
-            <section>
+        <section>
             <h2>Experimental Facilities</h2>
-            <p>F3L houses a suite of servo-hydraulic, rotary bending, and ultrasonic fatigue testing systems capable of accelerating fatigue-life quantification into the very-high and giga-cycle regimes, across ambient and extreme-temperature environments.</p>
+            <div class="card-accent-bar"></div>
+            <p>F3L houses a suite of servo-hydraulic, rotary bending, and ultrasonic fatigue testing systems capable of accelerating fatigue-life quantification into the very-high and giga-cycle regimes across ambient and extreme-temperature environments.</p>
 
             <div class="equipment-grid">
                 <div class="equipment-card">
-                    <img src="https://www.utoledo.edu/engineering/mechanical-industrial-manufacturing-engineering/images/giga%20cycle%20fatigue%202%20.jpg" alt="Ultrasonic Fatigue Testing System, USF-2000A">
+                    <img src="images/giga cycle fatigue 2.jpg" alt="Ultrasonic Fatigue Testing System, USF-2000A">
                     <h3>Ultrasonic Fatigue Testing (USF-2000A)</h3>
                     <ul>
-                        <li>Enables very high (giga) cycle fatigue testing</li>
-                        <li>Capable of reaching 10<sup>10</sup> cycles in as little as six days</li>
+                        <li>High-frequency (20 kHz) very-high and giga-cycle fatigue testing</li>
+                        <li>Capable of reaching 10<sup>10</sup> cycles in as few as six days</li>
                     </ul>
                 </div>
 
                 <div class="equipment-card">
-                    <img src="https://www.utoledo.edu/engineering/mechanical-industrial-manufacturing-engineering/images/ARBM1.jpg" alt="ARBM 120 Amsler Rotary Bending Machine">
-                    <h3>ARBM 120 Amsler Rotary Bending</h3>
+                    <img src="images/ARBM1.jpg" alt="ARBM 120 Amsler Rotary Bending Machine">
+                    <h3>ARBM 120 Amsler Rotary Bending Machine</h3>
                     <ul>
-                        <li>Outfitted with an AHTF 850-A high-temperature furnace</li>
-                        <li>Configurable for cycle counts up to 10<sup>9</sup></li>
-                        <li>Rotating bar bending fatigue testing at elevated temperatures up to 850&deg;C</li>
+                        <li>Equipped with an AHTF 850-A high-temperature furnace</li>
+                        <li>High-throughput rotating bar bending up to 10<sup>9</sup> cycles</li>
+                        <li>Operating elevated temperatures up to 850&deg;C</li>
                     </ul>
                 </div>
 
                 <div class="equipment-card">
-                    <img src="https://www.utoledo.edu/engineering/mechanical-industrial-manufacturing-engineering/images/100kn.jpg" alt="Hydraulic 100kN Axial Load Frame">
-                    <h3>Hydraulic 100kN Axial Load Frame</h3>
+                    <img src="images/hydraulic100kn.jpg" alt="Hydraulic 100kN Axial Load Frame">
+                    <h3>Hydraulic 100 kN Axial Load Frame</h3>
                     <ul>
-                        <li>MTS closed-loop, servo-controlled hydraulic load frame</li>
-                        <li>Paired with an Instron digital servo-controller and an environmental chamber</li>
+                        <li>MTS closed-loop, servo-hydraulic load frame</li>
+                        <li>Paired with digital servo-controllers and an environmental chamber</li>
                     </ul>
                 </div>
 
                 <div class="equipment-card">
-                    <img src="https://www.utoledo.edu/engineering/mechanical-industrial-manufacturing-engineering/images/multiaxial.jpg" alt="Biaxial Axial and Torsion Load Frame">
-                    <h3>Biaxial (Axial and Torsion) Load Frame</h3>
+                    <img src="images/multiaxial.jpg" alt="Biaxial Axial and Torsion Load Frame">
+                    <h3>Biaxial (Axial &amp; Torsion) Load Frame</h3>
                     <ul>
-                        <li>Instron closed-loop, servo-controlled biaxial system</li>
-                        <li>100 kN axial capacity paired with 1 kNm torsional capacity</li>
+                        <li>Instron closed-loop, servo-controlled multiaxial test frame</li>
+                        <li>100 kN axial loading capacity paired with 1 kNm torsional capacity</li>
                     </ul>
                 </div>
 
                 <div class="equipment-card">
                     <img src="images/MEG20TT.jpg" alt="MEG 20TT High Temperature Ultrasonic Fatigue Tester">
-                    <h3>MEG 20TT</h3>
+                    <h3>MEG 20TT High-Temperature Ultrasonic System</h3>
                     <ul>
-                        <li>High-temperature ultrasonic fatigue tester</li>
+                        <li>High-temperature accelerated ultrasonic fatigue tester</li>
                         <li>20 kN load capacity with a maximum test temperature of 1200&deg;C</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section style="margin-top: 3.5rem;">
             <h2>Testing Capabilities</h2>
-            <p>Our equipment supports a broad range of mechanical characterization methods, including:</p>
-            <ul style="margin-top: 1rem; margin-left: 1.5rem; list-style-type: square; columns: 2; column-gap: 2rem;">
-                <li>Tensile testing</li>
+            <div class="card-accent-bar"></div>
+            <p>Our infrastructure supports a comprehensive spectrum of standardized and specialized mechanical characterization protocols:</p>
+            <ul class="capabilities-list">
+                <li>tensile and compression testing</li>
                 <li>Strain-controlled fatigue testing (&epsilon;-N)</li>
                 <li>Load-controlled fatigue testing (S-N)</li>
-                <li>Displacement-controlled ultrasonic fatigue testing </li>
+                <li>Displacement-controlled ultrasonic fatigue testing (20 kHz)</li>
                 <li>Ambient and non-ambient temperature (cryogenic and elevated) ultrasonic fatigue testing</li>
-                <li> Ambient and elevated temperature  Rotating bending fatigue testing</li>
-                <li>In-situ and Ex-situ corrosion fatigue testing</li>
+                <li>Ambient and elevated-temperature rotating bending fatigue testing</li>
+                <li><em>In-situ</em> and <em>ex-situ</em> corrosion fatigue testing</li>
                 <li>Advance post-mortem characterization (Fractography)</li>
-                
             </ul>
         </section>
-    
-       
-
-
     </main>
 
-     <!-- Connected Unified Footer -->
     <footer>
         <div class="footer-credits">
-            <p>&copy; 2026 Failure, Fracture, and Fatigue Laboratory | University of Toledo</p>
+            <p>&copy; 2026 Fatigue, Fracture, and Failure Laboratory | University of Toledo</p>
             <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 0.5rem;">Department of Mechanical, Industrial and Manufacturing Engineering</p>
         </div>
-
     </footer>
-    <!-- Equipment grid styling, scoped to this page to match the site's existing capability-card / profile-card patterns -->
-    <style>
-        .equipment-card img {
-         width: 100%;
-         height: 200px;
-         object-fit: contain;
-         object-position: center;
-         border-radius: 4px;
-         margin-bottom: 1rem;
-         padding: 0.5rem;
-        } 
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .equipment-card {
-            background-color: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-top: 4px solid var(--ut-navy);
-        }
-        
-        .equipment-card h3 {
-            color: var(--ut-navy);
-            margin-bottom: 0.75rem;
-        }
-        .equipment-card ul {
-            margin-left: 1.2rem;
-            list-style-type: disc;
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-        }
-        .equipment-card li {
-            margin-bottom: 0.4rem;
-        }
-        @media (max-width: 600px) {
-            ul[style*="columns: 2"] {
-                columns: 1 !important;
-            }
-        }
-    </style>
-    <script>
-        const heroVideo = document.getElementById('heroVideo');
-        const videoPlaylist = [
-            "images/lab video.mp4",
-            "images/frozen3r.mp4"
-        ];
-        let currentVideoIndex = 0;
 
-        if (heroVideo) {
-        heroVideo.addEventListener('ended', () => {
-            currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length;
-            heroVideo.src = videoPlaylist[currentVideoIndex];
-            heroVideo.load();
-            heroVideo.play().catch(err => console.error("Playback error:", err));
-            });
-        }
-       
-    </script>
+    <script src="js/facilities.js" defer></script>
 </body>
 </html>

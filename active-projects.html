@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Projects | F3L - Fatigue, Fracture, and Failure Laboratory</title>
+    <link rel="shortcut icon" href="images/f3l.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-image-container">
+                <a href="index.html">
+                    <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">People ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.html">Lab Members</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projects ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="active-projects.html" class="active">Active Projects</a></li>
+                            <li><a href="closed-projects.html">Closed Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="facilities&capabilities.html">Facilities & Capabilities</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h1>Active <span>Research Projects</span></h1>
+    </div>
+
+    <main>
+        <section>
+            <h2>Research Archive</h2>
+            <div class="card-accent-bar"></div>
+            <p>Historical research initiatives, grant deliverables, and completed contract studies conducted by the Fatigue, Fracture, and Failure Laboratory, cataloged by supporting agency.</p>
+
+            <div class="archive-summary-grid" id="archive-stats"></div>
+
+            <div class="archive-container">
+                <aside class="archive-sidebar">
+                    <h3 style="margin-top: 0; font-size: 1.1rem; color: var(--ut-navy);">Sponsors</h3>
+                    <nav id="sponsor-buttons" aria-label="Active Project Sponsors" style="margin-top: 0.75rem;"></nav>
+                </aside>
+
+                <div class="archive-content-panel">
+                    <div id="sponsor-detail" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-credits">
+            <p>&copy; 2026 Fatigue, Fracture, and Failure Laboratory | University of Toledo</p>
+            <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 0.5rem;">Department of Mechanical, Industrial and Manufacturing Engineering</p>
+        </div>
+    </footer>
+
+    <script src="js/projects-archive.js" defer></script>
+</body>
+</html>
