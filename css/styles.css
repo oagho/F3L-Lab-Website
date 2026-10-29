@@ -767,22 +767,40 @@ footer {
 }
 
 /* --- Responsive Breakpoints --- */
+
 @media (max-width: 900px) {
-    .main-layout-container,
+     .main-layout-container,
     .archive-container,
     .contact-layout {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 600px) {
-    nav ul {
-        gap: 0.5rem;
+    /* Stack the logo and navigation vertically */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
     }
+
+    /* Center and wrap nav links beneath the logo */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem 0.6rem;
+    }
+
     nav a {
         font-size: 0.85rem;
-        padding: 0.3rem 0.4rem;
+        padding: 0.35rem 0.5rem;
     }
+
+    /* Position dropdown menu correctly when items wrap */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-top: 0.25rem;
+    }
+
     .capabilities-list {
         columns: 1;
     }
