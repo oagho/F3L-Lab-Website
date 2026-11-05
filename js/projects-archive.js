@@ -176,14 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     pi: 'Dr. Meysam Haghshenas (F3L)',
                     summary: 'Establishing processing–structure–property–fatigue maps under ambient and elevated temperatures for lightweight airframe components.'
                 },
-                {
-                    title: 'Ultrasonic VHCF Life Prediction in Ti-6Al-4V Compressor Blades',
-                    status: 'closed',
-                    period: '2022 – 2024',
-                    material: 'Ti-6Al-4V (Forged & Additive)',
-                    pi: 'F3L Research Group',
-                    summary: 'Identified subsurface gigacycle fatigue crack initiation mechanisms occurring beyond 10^7 cycles in engine rotating assemblies.'
-                }
+               
             ]
         }
     ];
