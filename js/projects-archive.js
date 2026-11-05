@@ -126,12 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            sponsor: 'Army Research Laboratory',
+            sponsor: 'Army Research office',
             logo: 'images/arl-logo.png',
             description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
             projects: [
                 {
-                    title: 'Fati',
+                    title: 'Fatigure',
                     status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
