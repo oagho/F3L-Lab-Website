@@ -7,19 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!archiveStatsEl || !sponsorButtonsEl || !sponsorDetailEl) return;
 
-    // Detect which page is loaded from the URL
     const isClosedPage = window.location.pathname.toLowerCase().includes('closed');
     const targetStatus = isClosedPage ? 'closed' : 'active';
 
-    // MASTER DATABASE: Add all projects here and flag them as 'active' or 'closed'
+    // MASTER DATABASE: Add 'logo' image paths for each sponsor
     const masterSponsorData = [
         {
             sponsor: 'NASA',
+            logo: 'images/nasa-logo.png',
             description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
             projects: [
                 {
-                    title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
+                    title: 'Long and ultra-long fatigue of AM Cu and Ni alloys',
+                    status: 'active',
+                    period: '2024 – Present',
+                    pi: 'Dr. Meysam Haghshenas (F3L)',
+                    summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
+                },
+                
+                
+            ]
+        },
+        {
+            sponsor: 'Office of Naval Research',
+            logo: 'images/onr-logo.png',
+            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
+            projects: [
+                {
+                    title: 'In-situ and ex-situ corrosion fatigue of WAAM NAB',
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
@@ -27,240 +43,111 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 {
                     title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
+                    status: 'closed',
                     period: '2021 – 2023',
                     material: 'GRCop-84 Alloy',
                     pi: 'F3L Research Group',
                     summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
                 }
             ]
         },
-         {
-            sponsor: 'office of Naval Research',
-            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
+        {
+            sponsor: 'NIST',
+            logo: 'images/nist-logo.png',
+            description: 'Measurement standards and characterization frameworks for advanced metallic additive structures.',
             projects: [
                 {
                     title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
+                    status: 'active',
+                    period: '2024 – Present',
+                    pi: 'Dr. Meysam Haghshenas (F3L)',
+                    summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
+                }
+            ]
+        },
+        {
+            sponsor: 'Lincoln Electric',
+            logo: 'images/lincoln-electric-logo.png',
+            description: 'Wire arc additive manufacturing (WAAM) deposition characterization and cyclic fatigue life quantification.',
+            projects: [
+                {
+                    title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
                     summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
                 }
             ]
         },
-        
-         {
-            sponsor: 'Nlst',
-            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
+        {
+            sponsor: 'Hyphen Innovations',
+            logo: 'images/hyphen-logo.png',
+            description: 'Damping characterization and vibrational fatigue mitigation in high-temperature components.',
             projects: [
                 {
                     title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
                     summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
                 }
             ]
         },
-         {
-            sponsor: 'Lincon Electric',
-            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
+        {
+            sponsor: 'EOS',
+            logo: 'images/eos-logo.png',
+            description: 'Laser powder bed fusion technology, process repeatability, and fatigue life verification.',
             projects: [
                 {
                     title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
                     summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
                 }
             ]
         },
-         {
-            sponsor: 'Hyphen innovations',
-            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
-            projects: [
-                {
-                    title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
-                    period: '2024 – Present',
-                    material: 'GRCop-42 / ORC-21 Copper Alloys',
-                    pi: 'Dr. Meysam Haghshenas (F3L)',
-                    summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
-                }
-            ]
-        },
-         {
-            sponsor: 'eos',
-            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
-            projects: [
-                {
-                    title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
-                    period: '2024 – Present',
-                    material: 'GRCop-42 / ORC-21 Copper Alloys',
-                    pi: 'Dr. Meysam Haghshenas (F3L)',
-                    summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
-                }
-            ]
-        },
-         {
+        {
             sponsor: 'NSF',
-            description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
+            logo: 'images/nsf-logo.png',
+            description: 'Fundamental research into dynamic strain deformation mechanisms and fatigue initiation.',
             projects: [
                 {
-                    title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
+                    title: 'High temperature fatigue of cast and AM aluminum alloys',
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
                     summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
                 }
             ]
         },
-         {
-            sponsor: 'army research laboratory',
+        {
+            sponsor: 'Army Research Laboratory',
+            logo: 'images/arl-logo.png',
             description: 'Aeronautics, space power propulsion systems, and advanced additive structural verification programs.',
             projects: [
                 {
-                    title: 'Gigacycle Fatigue of Additive GRCop-42 & ORC-21',
-                    status: 'active', // Appears on active-projects.html
+                    title: 'Fati',
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'GRCop-42 / ORC-21 Copper Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
                     summary: 'Investigating high-temperature gigacycle fatigue limits and damage accumulation under extreme thermal regimes.'
-                },
-                {
-                    title: 'High-Cycle Fatigue of Additive GRCop-42',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2021 – 2023',
-                    material: 'GRCop-84 Alloy',
-                    pi: 'F3L Research Group',
-                    summary: 'Characterized fatigue limits and microstructural crack nucleation sites of selective laser melted copper alloys at cryogenic operating limits.'
-                },
-                {
-                    title: 'Superalloy Thermal Barrier & Oxidation Fatigue',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2022',
-                    material: 'Inconel 625 / 718',
-                    pi: 'F3L Research Group',
-                    summary: 'Evaluated accelerated ultrasonic VHCF thresholds under severe oxidation environments simulating reusable rocket engine components.'
                 }
             ]
         },
         {
             sponsor: 'Department of Defense',
+            logo: 'images/dod-logo.png',
             description: 'Armored ground systems, heavy projectile structural integrity, and defensive material durability.',
             projects: [
                 {
                     title: 'VHCF and Defect Sensitivity of WAAM Nickel–Aluminum Bronze',
-                    status: 'active', // Appears on active-projects.html
+                    status: 'active',
                     period: '2024 – Present',
                     material: 'Wire Arc Additive NAB Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
@@ -268,29 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 {
                     title: 'High-Strain Dynamic Fracture Mechanics of Heavy Armor Plate',
-                    status: 'closed', // Appears on closed-projects.html
+                    status: 'closed',
                     period: '2020 – 2022',
                     material: 'Rolled Homogeneous Armor (RHA) Steel',
                     pi: 'F3L Research Group',
                     summary: 'Quantified critical crack propagation velocities and fracture toughness values under high-rate dynamic shock loading configurations.'
-                },
-                {
-                    title: 'Ballistic Impact Damage Tolerancing on Light Fastener Arrays',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2018 – 2021',
-                    material: 'High-Strength Fastener Steels',
-                    pi: 'F3L Research Group',
-                    summary: 'Analyzed post-impact residual fatigue capacity in critical joint assemblies subject to shear stress and shockwaves.'
                 }
             ]
         },
         {
-            sponsor: 'Air Force office of Scientific Research',
+            sponsor: 'Air Force Office of Scientific Research',
+            logo: 'images/afosr-logo.png',
             description: 'Aviation airframe structural life extension, turbine engine alloys, and ultrasonic testing regimens.',
             projects: [
                 {
                     title: 'Ultrasonic Fatigue Mechanics in Advanced Additive Al Alloys',
-                    status: 'active', // Appears on active-projects.html
+                    status: 'active',
                     period: '2025 – Present',
                     material: 'Al-Ce / 2xxx & 7xxx Alloys',
                     pi: 'Dr. Meysam Haghshenas (F3L)',
@@ -298,61 +178,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 {
                     title: 'Ultrasonic VHCF Life Prediction in Ti-6Al-4V Compressor Blades',
-                    status: 'closed', // Appears on closed-projects.html
+                    status: 'closed',
                     period: '2022 – 2024',
                     material: 'Ti-6Al-4V (Forged & Additive)',
                     pi: 'F3L Research Group',
                     summary: 'Identified subsurface gigacycle fatigue crack initiation mechanisms occurring beyond 10^7 cycles in engine rotating assemblies.'
-                },
-                {
-                    title: 'Fretting Fatigue Mitigation in Aircraft Lap Joints',
-                    status: 'closed', // Appears on closed-projects.html
-                    period: '2019 – 2021',
-                    material: 'Al 7075-T6 / Al 2024-T3',
-                    pi: 'F3L Research Group',
-                    summary: 'Studied mechanical interface degradation, micro-slip contact damage, and surface coating barriers in aging military transport aircraft.'
                 }
             ]
         }
     ];
 
-    // Filter projects matching the current page's target status
     const currentDataset = masterSponsorData
         .map(sponsorGroup => ({
             ...sponsorGroup,
             projects: sponsorGroup.projects.filter(p => p.status === targetStatus)
         }))
-        .filter(sponsorGroup => sponsorGroup.projects.length > 0); // Only keep sponsors that have matching projects
+        .filter(sponsorGroup => sponsorGroup.projects.length > 0);
 
-    const totalCount = currentDataset.reduce((acc, curr) => acc + curr.projects.length, 0);
-    const countLabel = isClosedPage ? 'Closed Projects' : 'Active Projects';
-    const statusLabel = isClosedPage ? '100% Delivered' : 'Active / Tracking';
-
-    // 1. Render Summary Cards
-    archiveStatsEl.innerHTML = [
-        ['Sponsors', currentDataset.length, 'agencies'],
-        [countLabel, totalCount, 'projects'],
-        ['Testing Regimes', 'VHCF / HCF', 'methods'],
-        ['Temperature Environments', 'Ambient / Cryogenic', 'conditions']
-    ].map(([label, val, unit]) => `
-        <div class="archive-summary-card">
-            <div class="archive-summary-label">${label}</div>
-            <div class="archive-summary-val">
-                <strong>${val}</strong>
-                <span>${unit}</span>
-            </div>
-        </div>
-    `).join('');
-
-    // 2. Render Sponsor Sidebar Buttons
+    // 2. Render Sidebar Buttons with Logos and Fallback Text
     sponsorButtonsEl.innerHTML = currentDataset.map((item, index) => `
-        <button class="archive-sponsor-btn" data-sponsor="${index}" aria-pressed="false">
-            <span>${item.sponsor}</span>
+        <button class="archive-sponsor-btn" data-sponsor="${index}" aria-pressed="false" title="${item.sponsor}">
+            <div class="sponsor-btn-brand">
+                <img src="${item.logo}" alt="${item.sponsor} logo" class="sponsor-btn-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="sponsor-fallback-name" style="display: none;">${item.sponsor}</span>
+            </div>
             <small>${item.projects.length}</small>
         </button>
     `).join('');
 
-    // 3. Render Detail Display
+    // 3. Render Detail View with Large Sponsor Logo Header
     function displaySponsorProjects(index) {
         const data = currentDataset[index];
         if (!data) return;
@@ -362,9 +216,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         sponsorDetailEl.innerHTML = `
-            <div class="archive-header" style="margin-bottom: 1.25rem;">
-                <h3 style="color: var(--ut-navy); font-size: 1.4rem;">${data.sponsor}</h3>
-                <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: #555;">${data.description}</p>
+            <div class="archive-header">
+                <div class="sponsor-header-content">
+                    <img src="${data.logo}" alt="${data.sponsor} Logo" class="sponsor-detail-logo" onerror="this.style.display='none';">
+                    <div>
+                        <h3 style="color: var(--ut-navy); font-size: 1.4rem; margin-bottom: 0.25rem;">${data.sponsor}</h3>
+                        <p style="margin: 0; font-size: 0.95rem; color: #555;">${data.description}</p>
+                    </div>
+                </div>
             </div>
             <div class="archive-list">
                 ${data.projects.map(proj => `
@@ -374,7 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="archive-year-badge">${proj.period}</span>
                         </div>
                         <div class="archive-meta">
-                            <span><strong>Material:</strong> ${proj.material}</span>
                             <span><strong>Lead:</strong> ${proj.pi}</span>
                         </div>
                         <p class="archive-desc">${proj.summary}</p>
