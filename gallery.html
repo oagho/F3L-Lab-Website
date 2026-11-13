@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | F3L - Fatigue, Fracture, and Failure Laboratory</title>
+    <link rel="shortcut icon" href="images/f3l.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-image-container">
+                <a href="index.html">
+                    <img src="images/f3l-logo.png" alt="F3L - Fatigue, Fracture, and Failure Lab Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">People ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.html">Lab Members</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projects ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="active-projects.html">Active Projects</a></li>
+                            <li><a href="closed-projects.html">Closed Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="facilities&capabilities.html">Facilities &amp; Capabilities</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h1>Laboratory <span>Gallery</span></h1>
+    </div>
+
+    <main>
+        <section>
+            <h2>Featured Highlights</h2>
+            <div class="card-accent-bar"></div>
+            <p>Automatic showcase cycling through research presentations, awards, experimental facilities, and laboratory milestones.</p>
+
+            <!-- Automatic Featured Slideshow -->
+            <div class="gallery-slideshow" id="gallerySlideshow" aria-roledescription="carousel">
+                <div class="slideshow-stage">
+                    <img id="autoSlideImg" src="images/CAM26.jpg" alt="F3L Gallery Highlight">
+                    <div class="slideshow-overlay">
+                        <span class="gallery-tag" id="autoSlideTag">Conferences</span>
+                        <h3 id="autoSlideTitle">ASTM ICAM 2026 Presentation</h3>
+                        <p id="autoSlideDesc">F3L researchers presenting additive manufacturing fatigue findings at ASTM ICAM 2026.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="auto-slide-btn prev" id="autoSlidePrev" aria-label="Previous slide">&#10094;</button>
+                <button type="button" class="auto-slide-btn next" id="autoSlideNext" aria-label="Next slide">&#10095;</button>
+
+                <div class="slideshow-toolbar">
+                    <span id="autoSlideCounter">1 / 1</span>
+                    <button type="button" class="slideshow-toggle-btn" id="autoSlideToggle" aria-label="Pause slideshow">Pause</button>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 3.5rem;">
+            <h2>Browse All Photos</h2>
+            <div class="card-accent-bar"></div>
+
+            <!-- Category Filter Controls -->
+            <div class="gallery-filters" role="group" aria-label="Filter gallery by category">
+                <button type="button" class="filter-btn active" data-filter="all">All Media</button>
+                <button type="button" class="filter-btn" data-filter="conferences">Conferences &amp; Awards</button>
+                <button type="button" class="filter-btn" data-filter="equipment">Testing Facilities</button>
+                <button type="button" class="filter-btn" data-filter="team">Lab Members &amp; Alumni</button>
+            </div>
+
+            <!-- Auto-populated Responsive Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightboxTitle">
+        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image preview">&times;</button>
+        <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDesc"></p>
+            </div>
+        </div>
+        <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <footer>
+        <div class="footer-credits">
+            <p>&copy; 2026 Fatigue, Fracture, and Failure Laboratory | University of Toledo</p>
+            <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 0.5rem;">Department of Mechanical, Industrial and Manufacturing Engineering</p>
+        </div>
+    </footer>
+
+    <script src="js/gallery.js" defer></script>
+</body>
+</html>
