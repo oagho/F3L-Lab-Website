@@ -9,6 +9,13 @@ const GALLERY_IMAGES = [
         desc: "F3L researchers presenting additive manufacturing fatigue findings at ASTM ICAM 2026."
     },
     {
+        src: "images/group photo.jpg",
+        category: "conferences",
+        tag: "news",
+        title: "UT gets 2 federal grants to study advanced materials’ durability",
+        desc: "F3L researchers at ASTM ICAM 2026."
+    },
+    {
         src: "images/RammanMs&T26.jpg",
         category: "conferences",
         tag: "Conferences",
